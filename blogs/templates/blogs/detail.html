@@ -1,0 +1,33 @@
+
+{% load comments %}
+
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'blogs/style.css' %}" />
+
+<script src="{% static 'blogs/js/jquery.js' %}"></script>
+<script src="{% static 'blogs/js/rango-ajax.js' %}"></script>
+
+
+<h1>{{ post.post_head }}</h1>
+
+<p>{{ post.post_text | linebreaks }}</p>
+<h2>Comments</h2>
+
+
+{% render_comment_list for post %}
+
+<br/>
+<h2>Add new comment ...</h2>
+
+{% get_comment_form for post as form %}
+<table>
+  <form action="{% comment_form_target %}" method="post">
+    {% csrf_token %}
+	{{ form }}
+    <tr>
+      <td colspan="2">
+        <input type="submit" name="submit" value="Post">
+      </td>
+    </tr>
+  </form>
+</table>

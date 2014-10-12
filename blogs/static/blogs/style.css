@@ -1,0 +1,24 @@
+
+li a {
+	color: green;
+}
+
+body {
+	background: white url("images/0081.JPG") no-repeat right bottom;
+}
+
+h1 {
+	color: #616D80;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+
+h2, label {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+#id_honeypot, #id_url {
+
+	display: none;
+}
+
