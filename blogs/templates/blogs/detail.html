@@ -7,10 +7,34 @@
 <script src="{% static 'blogs/js/jquery.js' %}"></script>
 <script src="{% static 'blogs/js/rango-ajax.js' %}"></script>
 
+<script type="text/javascript">
+window.onload = function ()
+{
+  document.getElementById('credit').style.width = document.getElementById('photo').width;
+}
+
+</script>
 
 <h1>{{ post.post_head }}</h1>
 
-<p>{{ post.post_text | linebreaks }}</p>
+{% for pic in pictures %}
+<div width="100%" align="center">
+  <img id="photo" src="{{ MEDIA_URL }}{{ pic.get_image_filename}}" alt="Pic not available" height="400" >
+  <div id="credit" class="photo_credit" align="right">
+    Photo by {{ pic.get_credit }}
+  </div>
+</div>
+<div class="caption" width="100%" align="center">
+  <p>{{ pic.caption }}</p>
+</div>
+{% endfor %}
+<br/>
+<div class="content">
+  <p>{{ post.post_text | linebreaks }}</p>
+</div>
+
+<br/>
+<hr/>
 <h2>Comments</h2>
 
 

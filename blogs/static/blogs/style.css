@@ -1,10 +1,9 @@
 
-li a {
-	color: green;
-}
 
-body {
-	background: white url("images/0081.JPG") no-repeat right bottom;
+
+.content {
+	font-family: 'Comic Sans MS', cursive, sans-serif;
+	font-size: 16px;
 }
 
 h1 {
@@ -22,3 +21,12 @@ h2, label {
 	display: none;
 }
 
+.photo_credit {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 12px;
+}
+
+.caption {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 16px;
+}

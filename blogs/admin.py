@@ -1,11 +1,11 @@
 from django.contrib import admin
-from blogs.models import Post, Comment, Picture, Category
+from blogs.models import Post, Picture, Category
 
 # Register your models here.
 
-class CommentInLine(admin.TabularInline):
-	model = Comment
-	extra = 0
+# class CommentInLine(admin.TabularInline):
+# 	model = Comment
+# 	extra = 0
 
 class PictureInLine(admin.TabularInline):
 	model = Picture
@@ -22,7 +22,7 @@ class PostAdmin(admin.ModelAdmin):
 		(None,		{'fields': ['post_text']}),
 		(None, 		{'fields': ['pub_date']}),
 	]
-	inlines = [CommentInLine, PictureInLine, CategoryInLine]
+	inlines = [PictureInLine, CategoryInLine]
 	list_display = ('post_head', 'text_start', 'pub_date')
 	list_filter = ('category__cat_text', 'pub_date')
 	search_fields = ['post_head']

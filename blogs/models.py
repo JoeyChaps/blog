@@ -1,4 +1,6 @@
 from django.db import models
+from django.conf import settings
+import os.path
 
 # Create your models here.
 
@@ -17,7 +19,7 @@ class Post(models.Model):
 
 class Picture(models.Model):
 	post = models.ForeignKey(Post)
-	picture = models.ImageField(upload_to='blog/%Y/%m/%d')
+	picture = models.ImageField(upload_to=settings.MEDIA_ROOT)
 	caption = models.CharField(max_length=200)
 	credit = models.CharField(max_length=100)
 	pic_date = models.DateTimeField('date')
@@ -25,16 +27,22 @@ class Picture(models.Model):
 	def __unicode__(self):
 		return self.caption
 
-	def get_image_url(self):
-		return self.image.url
+	# def get_image_url(self):
+	# 	return self.picture.url
 
-class Comment(models.Model):
-	post = models.ForeignKey(Post)
-	com_text = models.CharField('comment', max_length=400)
-	com_date = models.DateTimeField('date')
+	def get_credit(self):
+		return self.credit
 
-	def __unicode__(self):
-		return self.com_text
+	def get_image_filename(self):
+		return os.path.basename(self.picture.url)
+
+# class Comment(models.Model):
+# 	post = models.ForeignKey(Post)
+# 	com_text = models.CharField('comment', max_length=400)
+# 	com_date = models.DateTimeField('date')
+
+	# def __unicode__(self):
+	# 	return self.com_text
 
 class Category(models.Model):
 	post = models.ForeignKey(Post)

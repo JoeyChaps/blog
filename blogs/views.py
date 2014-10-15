@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.template import RequestContext, loader
-from blogs.models import Post, Comment
+from blogs.models import Post, Picture
 from django.views import generic
 
 def index(request):
@@ -21,7 +21,8 @@ class IndexView(generic.ListView):
 
 def detail(request, post_id):
 	post = get_object_or_404(Post, pk=post_id)
-	return render(request, 'blogs/detail.html', {'post': post})
+	pictures = post.picture_set.all()
+	return render(request, 'blogs/detail.html', {'post': post, 'pictures': pictures})
 
 
 class DetailView(generic.DetailView):
