@@ -5,3 +5,4 @@ $(document).ready(function() {
 	$('label[for="id_url"]').css('display', 'none');
 
 });
+

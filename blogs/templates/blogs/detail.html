@@ -1,27 +1,23 @@
 
+{% extends 'base.html' %}
+
 {% load comments %}
 
-{% load staticfiles %}
-<link rel="stylesheet" type="text/css" href="{% static 'blogs/style.css' %}" />
+{% block title_content %}{{ post.post_head }}{% endblock %}
 
-<script src="{% static 'blogs/js/jquery.js' %}"></script>
-<script src="{% static 'blogs/js/rango-ajax.js' %}"></script>
-
-<script type="text/javascript">
-window.onload = function ()
-{
-  document.getElementById('credit').style.width = document.getElementById('photo').width;
-}
-
-</script>
+{% block post_content %}
 
 <h1>{{ post.post_head }}</h1>
 
 {% for pic in pictures %}
-<div width="100%" align="center">
-  <img id="photo" src="{{ MEDIA_URL }}{{ pic.get_image_filename}}" alt="Pic not available" height="400" >
-  <div id="credit" class="photo_credit" align="right">
-    Photo by {{ pic.get_credit }}
+
+
+<div class="outer" align="center">
+  <div class="middle" width="100%" >
+    <img id="photo" src="{{ MEDIA_URL }}{{ pic.get_image_filename}}" alt="{{ pic.caption }}" height="400" >
+    <div id="credit" class="photo_credit" align="right">    
+      Photo by {{ pic.get_credit }}
+    </div>
   </div>
 </div>
 <div class="caption" width="100%" align="center">
@@ -55,3 +51,4 @@ window.onload = function ()
     </tr>
   </form>
 </table>
+{% endblock%}

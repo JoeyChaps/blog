@@ -4,6 +4,10 @@
 .content {
 	font-family: 'Comic Sans MS', cursive, sans-serif;
 	font-size: 16px;
+	max-width: 640px;
+	width: 96%;
+	padding: 2%;
+	margin: 28px auto;
 }
 
 h1 {
@@ -30,3 +34,8 @@ h2, label {
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 16px;
 }
+
+.middle {
+	display: table;
+}
+
