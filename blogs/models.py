@@ -27,22 +27,11 @@ class Picture(models.Model):
 	def __unicode__(self):
 		return self.caption
 
-	# def get_image_url(self):
-	# 	return self.picture.url
-
 	def get_credit(self):
 		return self.credit
 
 	def get_image_filename(self):
 		return os.path.basename(self.picture.url)
-
-# class Comment(models.Model):
-# 	post = models.ForeignKey(Post)
-# 	com_text = models.CharField('comment', max_length=400)
-# 	com_date = models.DateTimeField('date')
-
-	# def __unicode__(self):
-	# 	return self.com_text
 
 class Category(models.Model):
 	post = models.ForeignKey(Post)

@@ -8,10 +8,7 @@
 {% block blog_content %}
 
 <h1>{{ post.post_head }}</h1>
-
 {% for pic in pictures %}
-
-
 <div class="outer" align="center">
   <div class="middle" width="100%" >
     <img id="photo" src="{{ MEDIA_URL }}{{ pic.get_image_filename}}" alt="{{ pic.caption }}" height="400" >
@@ -24,7 +21,6 @@
   <p>{{ pic.caption }}</p>
 </div>
 {% endfor %}
-<br/>
 <div class="content">
   <p>{{ post.post_text | linebreaks }}</p>
 </div>

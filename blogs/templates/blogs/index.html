@@ -2,16 +2,16 @@
 {% load staticfiles %}
 <link rel="stylesheet" type="text/css" href="{% static 'blogs/style.css' %}" />
 
-{% block title_content %}Joey Chaps Blogs{% endblock %}
+{% block title_content %}Joey Chaps Blog{% endblock %}
 
-{% block nav-home %}<strong class="nav-active">Home</strong>{% endblock %}
+{% block nav-blog %}<strong class="nav-active">Blog</strong>{% endblock %}
 
 {% block blog_content %}
-<h1>Joey Chaps Blogs</h1>
+<h1>Joey Chaps Blog</h1>
 {% if latest_post_list %}
 	<ul>
 	{% for post in latest_post_list %}
-    	<li><a href="{% url 'blogs:detail' post.id %}">{{ post.post_head }}</a></li>
+    	<li><a href="{% url 'blogs:detail' post.id %}">{{ post.post_head }}</a><span style="font-size:14px"> - {{post.pub_date}}<span></li>
 	{% endfor %}
 	</ul>
 {% else %}

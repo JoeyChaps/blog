@@ -55,13 +55,18 @@ h2, label {
 
 .navlink {
 	text-decoration: none;
+	color: black;
+}
+
+.navlink:hover {
+	color: white;
 }
 
 .navbutton {
 
 	display: table-cell;
 	width: 100px;
-	
+
 }
 
 .navline {
@@ -69,3 +74,4 @@ h2, label {
 	display: table-cell;
 	height: 100%;
 }
+
