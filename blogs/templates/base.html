@@ -1,0 +1,44 @@
+
+
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<script src="{% static 'blogs/js/jquery.js' %}"></script>
+<script src="{% static 'blogs/js/rango-ajax.js' %}"></script>
+
+<link rel="stylesheet" type="text/css" href="{% static 'blogs/style.css' %}" />
+
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		{% block head_content %}{% endblock %}
+		<title>
+		{% block title_content %}{% endblock %}
+		</title>
+	</head>
+	<body>
+		{% block nav %}
+		<div class="navbar" align="center">
+			<div id="nav">
+				<div class="navline" ></div>
+				<div class="navbutton">
+					{% block nav-home %}<a class="navlink" href="{% url 'home' %}">Home</a>{% endblock %}
+				</div>
+				<div class="navline" ></div>
+				<div class="navbutton">
+					{% block nav-blog %}<a class="navlink" href="{% url 'blogs:index' %}">Blog</a>{% endblock %}
+				</div>
+				<div class="navline" ></div>
+				<div class="navbutton">
+					{% block nav-about %}<a class="navlink" href="{% url 'about' %}">About</a>{% endblock %}
+				</div>
+				<div class="navline" ></div>
+			</div>
+		</div>
+		{% endblock %}
+		<div class="content">
+			{% block blog_content%}{% endblock %}
+		</div>
+	</body>
+</html>

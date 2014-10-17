@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'blogs/style.css' %}" />
+
+{% block title_content %}About Joey Chaps{% endblock %}
+
+{% block nav-about %}<strong class="nav-active">About</strong>{% endblock %}
+
+{% block blog_content %}
+<h1>About Joey Chaps</h1>
+<div class="outer" align="center">
+	Joey Chaps was a wee man when he was born.
+</div>
+{% endblock %}

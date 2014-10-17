@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'blogs/style.css' %}" />
+
+{% block title_content %}Joey Chaps Home{% endblock %}
+
+{% block nav-home %}<strong class="nav-active">Home</strong>{% endblock %}
+
+{% block blog_content %}
+<h1>Joey Chaps Home</h1>
+<div class="outer" align="center">
+	<div class="middle" width="100%" >
+		<a href="{% url 'blogs:detail' 6 %}"><img id="photo" src="{{ STATIC_URL }}100_0848_3.JPG" alt="picture unavailable" height="200" ></a>
+		<div id="credit" class="photo_credit" align="right">Photo by Joe Chapman</div>
+	</div>
+</div>
+{% endblock %}
