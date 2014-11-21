@@ -12,5 +12,6 @@ urlpatterns = patterns('',
 	url(r'^admin/', include(admin.site.urls)),
 	url(r'^home/', views.home, name='home'),
 	url(r'^about/', views.about, name='about'),
+	(r'^comments/posted/$', 'blogs.views.comment_posted'),
 	(r'^comments/', include('django.contrib.comments.urls')),
 ) 

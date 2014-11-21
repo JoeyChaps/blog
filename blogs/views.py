@@ -34,3 +34,8 @@ def home(request):
 def about(request):
 	return render(request, 'blogs/about.html')
 
+def comment_posted(request):
+	if request.GET['c']:
+		return HttpResponseRedirect(request.META['HTTP_REFERER'])
+
+	return HttpResponseRedirect("/")

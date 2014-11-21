@@ -11,7 +11,6 @@ class CategoryInLine(admin.TabularInline):
 	extra = 0
 
 class EntryAdmin(admin.ModelAdmin):
-	# fields = ['post_head', 'post_text', 'pub_date']
 	fieldsets = [
 		(None, 		{'fields': ['entry_head']}),
 		(None,		{'fields': ['entry_text']}),
