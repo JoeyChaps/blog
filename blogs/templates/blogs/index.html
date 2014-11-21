@@ -8,13 +8,13 @@
 
 {% block blog_content %}
 <h1>Joey Chaps Blog</h1>
-{% if latest_post_list %}
+{% if latest_entry_list %}
 	<ul>
-	{% for post in latest_post_list %}
-    	<li><a href="{% url 'blogs:detail' post.id %}">{{ post.post_head }}</a><span style="font-size:14px"> - {{post.pub_date}}<span></li>
+	{% for entry in latest_entry_list %}
+    	<li><a href="{% url 'blogs:detail' entry.id %}">{{ entry.entry_head }}</a><span style="font-size:14px"> - {{entry.pub_date}}<span></li>
 	{% endfor %}
 	</ul>
 {% else %}
-	<p>No posts are available.</p>
+	<p>No entrys are available.</p>
 {% endif %}
 {% endblock %}

@@ -8,6 +8,8 @@
 	width: 96%;
 	padding: 2%;
 	margin: 28px auto;
+	min-height: 600px;
+	position: relative;
 }
 
 h1 {
@@ -45,7 +47,8 @@ h2, label {
 	height: 28px;
 	display: table;
 	width: 100%;
-
+	border: 1px solid;
+	border-radius: 10px;
 }
 
 #nav {

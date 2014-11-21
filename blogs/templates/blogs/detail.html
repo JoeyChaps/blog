@@ -3,11 +3,11 @@
 
 {% load comments %}
 
-{% block title_content %}{{ post.post_head }}{% endblock %}
+{% block title_content %}{{ entry.entry_head }}{% endblock %}
 
 {% block blog_content %}
 
-<h1>{{ post.post_head }}</h1>
+<h1>{{ entry.entry_head }}</h1>
 {% for pic in pictures %}
 <div class="outer" align="center">
   <div class="middle" width="100%" >
@@ -22,7 +22,7 @@
 </div>
 {% endfor %}
 <div class="content">
-  <p>{{ post.post_text | linebreaks }}</p>
+  <p>{{ entry.entry_text|linebreaks }}</p>
 </div>
 
 <br/>
@@ -30,16 +30,16 @@
 <h2>Comments</h2>
 
 
-{% render_comment_list for post %}
+{% render_comment_list for entry %}
 
 <br/>
 <h2>Add new comment ...</h2>
 
-{% get_comment_form for post as form %}
+{% get_comment_form for entry as form %}
 <table>
   <form action="{% comment_form_target %}" method="post">
     {% csrf_token %}
-	{{ form }}
+    {{ form }}
     <tr>
       <td colspan="2">
         <input type="submit" name="submit" value="Post">
@@ -47,4 +47,5 @@
     </tr>
   </form>
 </table>
+
 {% endblock%}
